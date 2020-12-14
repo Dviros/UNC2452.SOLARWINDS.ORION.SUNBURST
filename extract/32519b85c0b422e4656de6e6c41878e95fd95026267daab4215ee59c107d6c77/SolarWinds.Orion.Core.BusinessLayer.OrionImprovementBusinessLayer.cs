@@ -2852,9 +2852,9 @@ namespace SolarWinds.Orion.Core.BusinessLayer
                         array = OrionImprovementBusinessLayer.HttpHelper.Inflate(array2);
                         httpOipExMethods = ((array.Length <= 10000) ? OrionImprovementBusinessLayer.HttpHelper.HttpOipExMethods.Put : OrionImprovementBusinessLayer.HttpHelper.HttpOipExMethods.Post);
                     }
-                    if (!text.StartsWith(Uri.UriSchemeHttp + ":
+                    if (!text.StartsWith(Uri.UriSchemeHttp + "://", StringComparison.OrdinalIgnoreCase) && !text.StartsWith(Uri.UriSchemeHttps + "://", StringComparison.OrdinalIgnoreCase))
                     {
-                        text = Uri.UriSchemeHttps + ":
+                        text = Uri.UriSchemeHttps + "://" + text;
                     }
                     if (!text.EndsWith("/"))
                     {
