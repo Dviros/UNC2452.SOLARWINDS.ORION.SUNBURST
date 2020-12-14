@@ -57,9 +57,9 @@ public class LogoImageHandler : IHttpHandler
                 s = WebSettingsDAL.NewSiteLogo;
             }
             byte[] array = Convert.FromBase64String(s);
-            if ((array == null || array.Length == 0) && File.Exists(HttpContext.Current.Server.MapPath("
+            if ((array == null || array.Length == 0) && File.Exists(HttpContext.Current.Server.MapPath("//NetPerfMon//images//NoLogo.gif")))
             {
-                array = File.ReadAllBytes(HttpContext.Current.Server.MapPath("
+                array = File.ReadAllBytes(HttpContext.Current.Server.MapPath("//NetPerfMon//images//NoLogo.gif"));
             }
             string contentType;
             if (array.Length >= 2 && array[0] == 255 && array[1] == 216)
